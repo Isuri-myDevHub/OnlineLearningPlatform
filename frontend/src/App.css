@@ -1,82 +1,47 @@
-/* General styling */
+/* src/App.css */
+
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f9;
   margin: 0;
   padding: 0;
 }
 
-nav {
+.navbar {
   background-color: #333;
-  color: #fff;
-  padding: 10px;
+  overflow: hidden;
 }
 
-nav a {
-  color: #fff;
-  margin: 0 10px;
-  text-decoration: none;
-}
-
-nav a:hover {
-  text-decoration: underline;
-}
-
-h2 {
-  color: #333;
-}
-
-form {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  padding: 20px;
-  margin: 20px 0;
-}
-
-form input {
+.navbar a {
+  float: left;
   display: block;
-  width: calc(100% - 22px);
-  padding: 10px;
-  margin: 10px 0;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  color: white;
+  text-align: center;
+  padding: 21px 20px;
+  text-decoration: none;
+  transition: all 0.3s ease; /* Transition effect for smooth hover */
 }
 
-form button {
-  background-color: #333;
-  color: #fff;
+.navbar a:hover {
+  background-color: #555; /* Darker background on hover */
+  color: white;
+}
+
+.auth-buttons {
+  float: right;
+}
+
+.auth-buttons a {
+  color: white;
+  text-decoration: none;
   padding: 10px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+  margin: 12px;
+  border: 2px solid #4CAF50;
+  border-radius: 5px;
+  transition: all 0.3s ease;
 }
 
-form button:hover {
-  background-color: #555;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  margin: 10px 0;
-  padding: 10px;
-  border-radius: 4px;
-}
-
-button {
-  background-color: #e74c3c;
-  color: #fff;
-  border: none;
-  padding: 5px 10px;
-  cursor: pointer;
-  border-radius: 4px;
-}
-
-button:hover {
-  background-color: #c0392b;
+.auth-buttons a:hover {
+  background-color: #4CAF50;
+  border-color: #4CAF50;
+  color: white;
 }

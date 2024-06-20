@@ -1,3 +1,5 @@
+// src/App.js
+
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Home from './components/Home';
@@ -7,20 +9,23 @@ import CourseList from './components/Courses/CourseList';
 import CourseDetail from './components/Courses/CourseDetail';
 import EnrollmentList from './components/Enrollments/EnrollmentList';
 import UserList from './components/Users/UserList';
+import './App.css';
 
 const App = () => {
     const [token, setToken] = useState('');
 
     return (
         <Router>
-            <nav>
+            <div className="navbar">
                 <Link to="/">Home</Link>
-                <Link to="/register">Register</Link>
-                <Link to="/login">Login</Link>
+                <Link to="/about">About</Link>
+                <Link to="/contact">Contact</Link>
                 <Link to="/courses">Courses</Link>
-                <Link to="/enrollments">Enrollments</Link>
-                <Link to="/users">Users</Link>
-            </nav>
+                <div className="auth-buttons">
+                    <Link to="/register">Register</Link>
+                    <Link to="/login">Login</Link>
+                </div>
+            </div>
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/register" element={<Register />} />
