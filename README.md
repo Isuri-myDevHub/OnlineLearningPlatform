@@ -38,8 +38,8 @@ This project is licensed under this [MIT License](License.txt)
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/yourusername/online-learning-platform.git
-   cd online-learning-platform
+   git clone https://github.com/Isuri-myDevHub/OnlineLearningPlatform.git
+   cd OnlineLearningPlatform
 
 2. **Install dependencies:**
 
