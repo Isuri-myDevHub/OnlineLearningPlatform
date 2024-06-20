@@ -1,0 +1,36 @@
+/* Contact.css */
+.container {
+    background-color: #f8f9fa;
+    padding: 20px;
+}
+
+.card {
+    border-radius: 10px;
+}
+
+.card-title {
+    font-size: 2rem;
+    color: #007bff; /* Bootstrap primary color */
+}
+
+.card-body p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.shadow-lg {
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+}
+
+.list-unstyled li {
+    margin-bottom: 10px;
+}
+
+.list-unstyled li a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.list-unstyled li a:hover {
+    text-decoration: underline;
+}
