@@ -20,14 +20,36 @@ exports.register = async (req, res) => {
 exports.login = async (req, res) => {
   const { email, password } = req.body;
   try {
+    // Find user by email
     const user = await User.findOne({ where: { email } });
+    
     if (!user) {
       return res.status(404).json({ message: 'User not found' });
     }
-    const isPasswordValid = await bcrypt.compare(password, user.password);
-    if (!isPasswordValid) {
-      return res.status(401).json({ message: 'Invalid credentials' });
+
+    // Check role to allow only students to log in
+    if (user.role !== 'student') {
+      return res.status(403).json({ message: 'Only students can log in' });
     }
+
+    // For admin, check default credentials
+    if (user.role === 'admin') {
+      const defaultUsername = 'admin';
+      const defaultEmail = 'admin@example.com';
+      const defaultPassword = 'admin123'; // Replace with your default admin password
+
+      if (email !== defaultEmail || password !== defaultPassword) {
+        return res.status(401).json({ message: 'Invalid credentials' });
+      }
+    } else {
+      // For students, validate password
+      const isPasswordValid = await bcrypt.compare(password, user.password);
+      if (!isPasswordValid) {
+        return res.status(401).json({ message: 'Invalid credentials' });
+      }
+    }
+
+    // Generate JWT token
     const token = jwt.sign({ id: user.id, email: user.email, role: user.role }, secretKey, { expiresIn: '1h' });
     res.status(200).json({ message: 'Login successful!', token });
   } catch (error) {
