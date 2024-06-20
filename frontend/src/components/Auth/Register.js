@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { register } from '../../services/api';
-import { Link } from 'react-router-dom';
+import { register } from '../../services/api'; // Updated import path
+import { Link, useNavigate } from 'react-router-dom';
 
 const Register = () => {
-    const [form, setForm] = useState({ username: '', email: '', password: '', role: 'student' }); // Default role is 'student'
+    const [form, setForm] = useState({ username: '', email: '', password: '', role: '' }); // Initialize role as an empty string
     const [message, setMessage] = useState('');
+    const navigate = useNavigate(); // useNavigate hook for navigation
 
     const handleChange = (e) => {
         setForm({ ...form, [e.target.name]: e.target.value });
@@ -15,8 +16,9 @@ const Register = () => {
         try {
             await register(form);
             setMessage('Registration successful!');
+            navigate('/courses'); // Navigate to courses list
         } catch (error) {
-            setMessage('Error: ' + error.response.data.message);
+            setMessage('Error: ' + (error.response?.data?.message || 'Registration failed'));
         }
     };
 
@@ -42,10 +44,7 @@ const Register = () => {
                                 </div>
                                 <div className="form-group">
                                     <label>Role</label>
-                                    <select name="role" className="form-control" value={form.role} onChange={handleChange}>
-                                        <option value="student">Student</option>
-                                        
-                                    </select>
+                                    <input type="text" name="role" className="form-control" placeholder="Role (e.g., student, admin)" onChange={handleChange} required />
                                 </div>
                                 <button type="submit" className="btn btn-primary btn-block">Register</button>
                             </form>
