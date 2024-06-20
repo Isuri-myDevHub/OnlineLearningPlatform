@@ -1,8 +1,10 @@
+// src/components/Auth/Register.js
+
 import React, { useState } from 'react';
 import { register } from '../../services/api';
 
 const Register = () => {
-    const [form, setForm] = useState({ username: '', email: '', password: '', role: '' });
+    const [form, setForm] = useState({ username: '', email: '', password: '', role: 'student' });
     const [message, setMessage] = useState('');
 
     const handleChange = (e) => {
@@ -26,7 +28,6 @@ const Register = () => {
                 <input type="text" name="username" placeholder="Username" onChange={handleChange} required />
                 <input type="email" name="email" placeholder="Email" onChange={handleChange} required />
                 <input type="password" name="password" placeholder="Password" onChange={handleChange} required />
-                <input type="text" name="role" placeholder="Role" onChange={handleChange} required />
                 <button type="submit">Register</button>
             </form>
             <p>{message}</p>

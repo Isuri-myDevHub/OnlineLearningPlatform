@@ -1,3 +1,5 @@
+// src/components/Courses/CourseDetail.js
+
 import React, { useState, useEffect } from 'react';
 import { getCourseById, updateCourse } from '../../services/api';
 import { useParams } from 'react-router-dom';
@@ -9,8 +11,12 @@ const CourseDetail = ({ token }) => {
 
     useEffect(() => {
         const fetchCourse = async () => {
-            const response = await getCourseById(id);
-            setCourse(response.data);
+            try {
+                const response = await getCourseById(id);
+                setCourse(response.data);
+            } catch (error) {
+                console.error('Error fetching course:', error);
+            }
         };
         fetchCourse();
     }, [id]);
@@ -34,7 +40,6 @@ const CourseDetail = ({ token }) => {
             <h2>Course Detail</h2>
             <form onSubmit={handleSubmit}>
                 <input type="text" name="title" value={course.title || ''} onChange={handleChange} required />
-                <input type="text" name="description" value={course.description || ''} onChange={handleChange} required />
                 <input type="text" name="instructor" value={course.instructor || ''} onChange={handleChange} required />
                 <button type="submit">Update Course</button>
             </form>
