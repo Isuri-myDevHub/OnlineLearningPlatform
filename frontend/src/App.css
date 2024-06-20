@@ -15,12 +15,16 @@ body {
   float: left;
   display: block;
   color: white;
-  text-align: center;
+  text-align: left;
   padding: 21px 20px;
   text-decoration: none;
   transition: all 0.3s ease; /* Transition effect for smooth hover */
 }
 
+
+.navbar .left-links a {
+  margin-right: 20px; /* Adjusted margin between links */
+}
 .navbar a:hover {
   background-color: #555; /* Darker background on hover */
   color: white;

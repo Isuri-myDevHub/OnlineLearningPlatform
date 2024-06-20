@@ -1,12 +1,12 @@
-// src/components/Auth/Login.js
-
 import React, { useState } from 'react';
-import { login } from '../../services/api';
-import { Link } from 'react-router-dom';
+import { login } from '../../services/api'; // Adjust the relative path as per your actual structure
+import { Link} from 'react-router-dom';
+import AdminDashboard from '../AdminDashboard'; // Import AdminDashboard component
 
 const Login = ({ setToken }) => {
     const [form, setForm] = useState({ email: '', password: '' });
     const [message, setMessage] = useState('');
+    const [redirectToDashboard, setRedirectToDashboard] = useState(false); // State to handle redirection
 
     const handleChange = (e) => {
         setForm({ ...form, [e.target.name]: e.target.value });
@@ -16,12 +16,32 @@ const Login = ({ setToken }) => {
         e.preventDefault();
         try {
             const response = await login(form);
-            setToken(response.data.token);
-            setMessage('Login successful!');
+            console.log('Response:', response); // Log the response for debugging
+            if (response && response.data && response.data.token) {
+                setToken(response.data.token);
+                setMessage('Login successful!');
+
+                // Check if admin credentials are used
+                if (form.email === 'admin@codemaster.com' && form.password === 'admin123') {
+                    setRedirectToDashboard(true); // Redirect to admin dashboard
+                }
+            } else {
+                setMessage('Error: Invalid response from server');
+            }
         } catch (error) {
-            setMessage('Error: ' + error.response.data.message);
+            console.error('Error:', error); // Log the error for debugging
+            if (error.response && error.response.data && error.response.data.message) {
+                setMessage('Error: ' + error.response.data.message);
+            } else {
+                setMessage('Error: Unable to login. Please try again later.');
+            }
         }
     };
+
+    if (redirectToDashboard) {
+        // Redirect to AdminDashboard if admin credentials were used
+        return <AdminDashboard />;
+    }
 
     return (
         <div className="container mt-5">
