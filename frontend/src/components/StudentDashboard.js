@@ -1,4 +1,3 @@
-// src/components/Dashboard/StudentDashboard.js
 
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../AuthProvider';
