@@ -1,7 +1,7 @@
 # CodeMaster Online Learning Platform 
 
 This is an online learning platform where students can enroll in courses and admins can manage courses and users.
-
+All the details are included in the Architecture and Design document.
 
 ### Version
 0.1.0
