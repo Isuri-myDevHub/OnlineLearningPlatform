@@ -1,5 +1,3 @@
-// src/App.js
-
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Home from './components/Home';
@@ -9,6 +7,8 @@ import CourseList from './components/Courses/CourseList';
 import CourseDetail from './components/Courses/CourseDetail';
 import EnrollmentList from './components/Enrollments/EnrollmentList';
 import UserList from './components/Users/UserList';
+import About from './components/About'; // Import About component
+import Contact from './components/Contact'; // Import Contact component
 import './App.css';
 
 const App = () => {
@@ -28,6 +28,8 @@ const App = () => {
             </div>
             <Routes>
                 <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} /> {/* Route for About page */}
+                <Route path="/contact" element={<Contact />} /> {/* Route for Contact page */}
                 <Route path="/register" element={<Register />} />
                 <Route path="/login" element={<Login setToken={setToken} />} />
                 <Route path="/courses" element={<CourseList token={token} />} />

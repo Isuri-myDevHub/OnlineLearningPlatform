@@ -1,10 +1,30 @@
-// src/components/Home.js
 import React from 'react';
 
 const Home = () => {
     return (
-        <div>
-            <h2>Welcome to the Online Learning Platform</h2>
+        <div className="container mt-4">
+            <div className="row justify-content-center">
+                <div className="col-md-8">
+                    <div className="card">
+                        <div className="card-body">
+                            <h2 className="card-title text-center mb-4">Welcome to [Your Platform Name]</h2>
+                            <p>Welcome to [Your Platform Name], your premier destination for learning programming and related topics online. Whether you're a beginner looking to dive into coding or an experienced developer seeking to advance your skills, we have the resources and courses tailored just for you.</p>
+                            <h4 className="text-center mt-4">Key Features</h4>
+                            <ul>
+                                <li><strong>Comprehensive Courses:</strong> Explore a wide range of courses covering popular programming languages, frameworks, and technologies.</li>
+                                <li><strong>Hands-On Learning:</strong> Practice coding with interactive exercises and real-world projects to reinforce your understanding.</li>
+                                <li><strong>Expert Instructors:</strong> Learn from industry professionals who bring real-world experience and insights to your learning journey.</li>
+                                <li><strong>Flexible Learning:</strong> Study at your own pace with our flexible schedule and access courses from anywhere, anytime.</li>
+                                <li><strong>Community Support:</strong> Engage with a supportive community of learners and mentors to collaborate and grow together.</li>
+                            </ul>
+                            <div className="text-center">
+                                <p>Get Started: Sign up today and embark on your journey to mastering programming and advancing your career.</p>
+                                <a href="/register" className="btn btn-primary btn-lg">Sign Up</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };
