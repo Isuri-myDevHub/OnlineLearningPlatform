@@ -21,14 +21,14 @@ This project is licensed under this [MIT License](License.txt)
 - **React.js:** Frontend framework for building user interfaces.
 - **React Router DOM:** Declarative routing for React applications.
 - **Axios:** Promise-based HTTP client for making API requests.
-- **Bootstrap:** Frontend UI framework (optional, if used).
+- **Bootstrap:** Frontend UI framework
 - **Jest and React Testing Library:** For unit and integration testing.
 
 ### Backend
 
 - **Node.js:** JavaScript runtime for server-side development.
 - **Express.js:** Web application framework for Node.js.
-- **PostgreSQL :** NoSQL database for storing course and user data.
+- **PostgreSQL :** database for storing course and user data.
 - **JWT (JSON Web Tokens):** For authentication and authorization.
 
 <br>
