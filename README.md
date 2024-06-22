@@ -24,7 +24,7 @@ This project is licensed under this [MIT License](License.txt)
 - **Bootstrap:** Frontend UI framework (optional, if used).
 - **Jest and React Testing Library:** For unit and integration testing.
 
-### Backend (if applicable)
+### Backend
 
 - **Node.js:** JavaScript runtime for server-side development.
 - **Express.js:** Web application framework for Node.js.
