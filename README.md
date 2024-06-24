@@ -4,7 +4,7 @@ This is an online learning platform where students can enroll in courses and adm
 All the details are included in the Architecture and Design document.
 
 ### Version
-0.1.0
+1.0.0
 
 ### License
 Copyright &copy; 2024 Isuri <br>
