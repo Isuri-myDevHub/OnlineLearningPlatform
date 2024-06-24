@@ -35,27 +35,33 @@ This project is licensed under this [MIT License](License.txt)
 
 ## Installation
 
-# Clone the repository
-git clone https://github.com/Isuri-myDevHub/OnlineLearningPlatform.git
-cd OnlineLearningPlatform
+### Clone the repository
+     ```bash
+     git clone https://github.com/Isuri-myDevHub/OnlineLearningPlatform.git
+     cd OnlineLearningPlatform
 
-# Install backend dependencies
-cd backend
-npm install
+### Install backend dependencies
+     ```bash
+     cd backend
+     npm install
 
-# Start the backend server
-npm start
+### Start the backend server
+     ```bash
+     npm start
 
-# If you are using nodemon for development, you can run:
-npm run dev
+### If you are using nodemon for development, you can run:
+     ```bash
+     npm run dev
 
-# In a new terminal window/tab
-# Install frontend dependencies
-cd ../frontend
-npm install
+### In a new terminal window/tab
+### Install frontend dependencies
+     ```bash
+     cd ../frontend
+     npm install
 
-# Start the frontend server
-npm start
+### Start the frontend server
+     ```bash
+     npm start
 
 
 ## Testing
