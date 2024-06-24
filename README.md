@@ -38,12 +38,16 @@ This project is licensed under this [MIT License](License.txt)
 ### Clone the repository
   ```bash
   git clone https://github.com/Isuri-myDevHub/OnlineLearningPlatform.git
-  cd OnlineLearningPlatform
+```
+```bash
+cd OnlineLearningPlatform
 ```
 
 ### Install backend dependencies
 ```bash
 cd backend
+```
+```bash
 npm install
 ```
 
@@ -61,6 +65,8 @@ npm run dev
 ### Install frontend dependencies
 ```bash
 cd ../frontend
+```
+```bash
 npm install
 ```
 
